@@ -5,66 +5,65 @@ const SOFREH_ITEMS = [
   { id: "poetry", en: "Poetry book", name: "کتاب شعر", finglish: "ketab-e she'r", emoji: "📖" },
   { id: "tea", en: "Tea", name: "چای", finglish: "chay", emoji: "🍵" },
   { id: "candle", en: "Candle", name: "شمع", finglish: "sham'", emoji: "🕯️" },
-  { id: "mirror", en: "Mirror", name: "آینه", finglish: "ayeneh", emoji: "✨" },
 ];
 
 const CELEBRATION_STICKERS = ["🎉", "⭐", "🍉", "🔴", "✨", "🕯️", "🎊", "🌟", "🥜", "🍵", "📖", "💛"];
 
-// One level per sofreh item. Difficulty: easy vocab → medium phrases → hard expressions.
+// One level per sofreh item. Difficulty: easy → medium → hard, all about Yalda table & culture.
 const LEVELS = [
   {
     id: "level-1",
     label: "Level 1 · Easy",
-    band: "Easy · Vocabulary",
+    band: "Easy · Yalda table",
     itemId: "watermelon",
     questions: [
       {
-        q: "How do you say “watermelon” in Persian?",
+        q: "Which red fruit on the Yalda sofreh stands for joy and summer in winter?",
         choices: [
           { fa: "هندوانه", finglish: "hendevaneh" },
           { fa: "خیار", finglish: "khiyar" },
           { fa: "موز", finglish: "moz" },
-          { fa: "گلابی", finglish: "golabi" },
+          { fa: "هویج", finglish: "havij" },
         ],
         answer: 0,
       },
       {
-        q: "How do you say “night” in Persian?",
+        q: "What do Persians call the festive cloth / spread for Yalda?",
+        choices: [
+          { fa: "سفره", finglish: "sofreh" },
+          { fa: "پنجره", finglish: "panjereh" },
+          { fa: "صندلی", finglish: "sandali" },
+          { fa: "دیوار", finglish: "divar" },
+        ],
+        answer: 0,
+      },
+      {
+        q: "Yalda is famous as the longest … of the year.",
         choices: [
           { fa: "شب", finglish: "shab" },
           { fa: "روز", finglish: "ruz" },
           { fa: "صبح", finglish: "sobh" },
-          { fa: "ظهر", finglish: "zohr" },
+          { fa: "هفته", finglish: "hafteh" },
         ],
         answer: 0,
       },
       {
-        q: "How do you say “red” in Persian?",
+        q: "Watermelon on the Yalda table is linked with which color of celebration?",
         choices: [
           { fa: "قرمز", finglish: "qermez" },
           { fa: "آبی", finglish: "abi" },
-          { fa: "سبز", finglish: "sabz" },
           { fa: "زرد", finglish: "zard" },
+          { fa: "خاکستری", finglish: "khakestari" },
         ],
         answer: 0,
       },
       {
-        q: "How do you say “fruit” in Persian?",
+        q: "How do you say “fruit” — often shared on the Yalda sofreh?",
         choices: [
           { fa: "میوه", finglish: "miveh" },
           { fa: "نان", finglish: "nan" },
-          { fa: "گوشت", finglish: "gusht" },
+          { fa: "سوپ", finglish: "sup" },
           { fa: "برنج", finglish: "berenj" },
-        ],
-        answer: 0,
-      },
-      {
-        q: "How do you say “winter” in Persian?",
-        choices: [
-          { fa: "زمستان", finglish: "zemestan" },
-          { fa: "بهار", finglish: "bahar" },
-          { fa: "تابستان", finglish: "tabestan" },
-          { fa: "پاییز", finglish: "pa'iz" },
         ],
         answer: 0,
       },
@@ -73,11 +72,11 @@ const LEVELS = [
   {
     id: "level-2",
     label: "Level 2 · Easy",
-    band: "Easy · Vocabulary",
+    band: "Easy · Yalda table",
     itemId: "pomegranate",
     questions: [
       {
-        q: "How do you say “pomegranate” in Persian?",
+        q: "Which Yalda fruit with many seeds stands for abundance and blessing?",
         choices: [
           { fa: "انار", finglish: "anar" },
           { fa: "سیب", finglish: "sib" },
@@ -87,17 +86,37 @@ const LEVELS = [
         answer: 0,
       },
       {
-        q: "How do you say “seed” in Persian?",
+        q: "What do people often wish for when they share pomegranate on Yalda?",
         choices: [
-          { fa: "دانه", finglish: "daneh" },
-          { fa: "برگ", finglish: "barg" },
-          { fa: "ریشه", finglish: "risheh" },
-          { fa: "گل", finglish: "gol" },
+          { fa: "برکت", finglish: "barakat" },
+          { fa: "عجله", finglish: "ajaleh" },
+          { fa: "خستگی", finglish: "khastegi" },
+          { fa: "سکوت", finglish: "sokut" },
         ],
         answer: 0,
       },
       {
-        q: "How do you say “sweet” in Persian?",
+        q: "Pomegranate seeds on the sofreh are called … in Persian.",
+        choices: [
+          { fa: "دانه", finglish: "daneh" },
+          { fa: "برگ", finglish: "barg" },
+          { fa: "ریشه", finglish: "risheh" },
+          { fa: "چوب", finglish: "chub" },
+        ],
+        answer: 0,
+      },
+      {
+        q: "Yalda comes at the start of which season?",
+        choices: [
+          { fa: "زمستان", finglish: "zemestan" },
+          { fa: "بهار", finglish: "bahar" },
+          { fa: "تابستان", finglish: "tabestan" },
+          { fa: "پاییز", finglish: "pa'iz" },
+        ],
+        answer: 0,
+      },
+      {
+        q: "How do you say “sweet” — like ripe fruit on the Yalda table?",
         choices: [
           { fa: "شیرین", finglish: "shirin" },
           { fa: "تلخ", finglish: "talkh" },
@@ -106,80 +125,60 @@ const LEVELS = [
         ],
         answer: 0,
       },
-      {
-        q: "How do you say “year” in Persian?",
-        choices: [
-          { fa: "سال", finglish: "sal" },
-          { fa: "ماه", finglish: "mah" },
-          { fa: "هفته", finglish: "hafteh" },
-          { fa: "روز", finglish: "ruz" },
-        ],
-        answer: 0,
-      },
-      {
-        q: "How do you say “cold” in Persian?",
-        choices: [
-          { fa: "سرد", finglish: "sard" },
-          { fa: "گرم", finglish: "garm" },
-          { fa: "نرم", finglish: "narm" },
-          { fa: "سخت", finglish: "sakht" },
-        ],
-        answer: 0,
-      },
     ],
   },
   {
     id: "level-3",
     label: "Level 3 · Easy",
-    band: "Easy · Vocabulary",
+    band: "Easy · Yalda table",
     itemId: "nuts",
     questions: [
       {
-        q: "How do you say “nuts / trail mix” in Persian?",
+        q: "What mixed nuts and dried fruit tray is classic on a Yalda sofreh?",
         choices: [
           { fa: "آجیل", finglish: "ajil" },
-          { fa: "سوپ", finglish: "sup" },
           { fa: "سالاد", finglish: "salad" },
           { fa: "کیک", finglish: "keyk" },
+          { fa: "سوپ", finglish: "sup" },
         ],
         answer: 0,
       },
       {
-        q: "How do you say “food” in Persian?",
-        choices: [
-          { fa: "غذا", finglish: "ghaza" },
-          { fa: "آب", finglish: "ab" },
-          { fa: "میز", finglish: "miz" },
-          { fa: "صندلی", finglish: "sandali" },
-        ],
-        answer: 0,
-      },
-      {
-        q: "How do you say “home / house” in Persian?",
+        q: "Families gather at home for Yalda — how do you say “home”?",
         choices: [
           { fa: "خانه", finglish: "khaneh" },
           { fa: "مدرسه", finglish: "madreseh" },
-          { fa: "مغازه", finglish: "maghazeh" },
-          { fa: "پارک", finglish: "park" },
+          { fa: "اداره", finglish: "edareh" },
+          { fa: "بازار", finglish: "bazar" },
         ],
         answer: 0,
       },
       {
-        q: "How do you say “friend” in Persian?",
+        q: "Sharing snacks on Yalda is about being with …",
         choices: [
           { fa: "دوست", finglish: "dust" },
           { fa: "دشمن", finglish: "doshman" },
-          { fa: "مهمان", finglish: "mehman" },
-          { fa: "معلم", finglish: "mo'allem" },
+          { fa: "امتحان", finglish: "emtehan" },
+          { fa: "کار", finglish: "kar" },
         ],
         answer: 0,
       },
       {
-        q: "How do you say “eat” in Persian?",
+        q: "How do you say “food” for the treats on the Yalda table?",
+        choices: [
+          { fa: "غذا", finglish: "ghaza" },
+          { fa: "میز", finglish: "miz" },
+          { fa: "صندلی", finglish: "sandali" },
+          { fa: "پنجره", finglish: "panjereh" },
+        ],
+        answer: 0,
+      },
+      {
+        q: "On Yalda night people sit together and … the sofreh snacks.",
         choices: [
           { fa: "خوردن", finglish: "khordan" },
-          { fa: "خوابیدن", finglish: "khabidan" },
           { fa: "دویدن", finglish: "davidan" },
+          { fa: "خوابیدن", finglish: "khabidan" },
           { fa: "نوشتن", finglish: "neveshtan" },
         ],
         answer: 0,
@@ -189,21 +188,21 @@ const LEVELS = [
   {
     id: "level-4",
     label: "Level 4 · Medium",
-    band: "Medium · Phrases",
+    band: "Medium · Yalda culture",
     itemId: "poetry",
     questions: [
       {
-        q: "How do you say “poetry” in Persian?",
+        q: "Which book of poetry is often opened for fortune-telling on Yalda?",
         choices: [
-          { fa: "شعر", finglish: "she'r" },
-          { fa: "داستان", finglish: "dastan" },
-          { fa: "موسیقی", finglish: "musiqi" },
-          { fa: "نقاشی", finglish: "naqqashi" },
+          { fa: "دیوان حافظ", finglish: "divan-e hafez" },
+          { fa: "دفتر مشق", finglish: "daftar-e mashq" },
+          { fa: "کتاب آشپزی", finglish: "ketab-e ashpazi" },
+          { fa: "روزنامه امروز", finglish: "ruznameh-ye emruz" },
         ],
         answer: 0,
       },
       {
-        q: "What do people often say for “Happy Yalda Night”?",
+        q: "What do people say for “Happy Yalda Night”?",
         choices: [
           { fa: "شب یلدا مبارک", finglish: "shab-e yalda mobarak" },
           { fa: "صبح بخیر", finglish: "sobh bekheir" },
@@ -213,12 +212,12 @@ const LEVELS = [
         answer: 0,
       },
       {
-        q: "What is the Persian word for the festive table spread?",
+        q: "Fortune-telling with Hafez on Yalda is called …",
         choices: [
-          { fa: "سفره", finglish: "sofreh" },
-          { fa: "پنجره", finglish: "panjereh" },
-          { fa: "دیوار", finglish: "divar" },
-          { fa: "سقف", finglish: "saqf" },
+          { fa: "فال حافظ", finglish: "fal-e hafez" },
+          { fa: "بازی فوتبال", finglish: "bazi-ye futbal" },
+          { fa: "خرید آنلاین", finglish: "kharid-e online" },
+          { fa: "آشپزی سریع", finglish: "ashpazi-ye sari'" },
         ],
         answer: 0,
       },
@@ -233,12 +232,12 @@ const LEVELS = [
         answer: 0,
       },
       {
-        q: "How do you say “book of poetry” style for Hafez’s book?",
+        q: "Reading poems together on Yalda is called …",
         choices: [
-          { fa: "دیوان حافظ", finglish: "divan-e hafez" },
-          { fa: "دفتر مشق", finglish: "daftar-e mashq" },
-          { fa: "کتاب آشپزی", finglish: "ketab-e ashpazi" },
-          { fa: "روزنامه امروز", finglish: "ruznameh-ye emruz" },
+          { fa: "شعرخوانی", finglish: "she'r-khani" },
+          { fa: "دویدن", finglish: "davidan" },
+          { fa: "شنا کردن", finglish: "shena kardan" },
+          { fa: "خوابیدن", finglish: "khabidan" },
         ],
         answer: 0,
       },
@@ -247,21 +246,21 @@ const LEVELS = [
   {
     id: "level-5",
     label: "Level 5 · Medium",
-    band: "Medium · Phrases",
+    band: "Medium · Yalda culture",
     itemId: "tea",
     questions: [
       {
-        q: "How do you say “tea” in Persian?",
+        q: "What warm drink is often poured while families sit around the Yalda sofreh?",
         choices: [
           { fa: "چای", finglish: "chay" },
-          { fa: "شیر", finglish: "shir" },
-          { fa: "آبمیوه", finglish: "abmiveh" },
           { fa: "دوغ", finglish: "dugh" },
+          { fa: "آبمیوه", finglish: "abmiveh" },
+          { fa: "شیر", finglish: "shir" },
         ],
         answer: 0,
       },
       {
-        q: "How do you say “family gathering” for Yalda night?",
+        q: "A cozy Yalda family gathering is often called …",
         choices: [
           { fa: "دور همی", finglish: "dor-hami" },
           { fa: "تنهایی", finglish: "tanha'i" },
@@ -271,7 +270,7 @@ const LEVELS = [
         answer: 0,
       },
       {
-        q: "How do you say “good night” in Persian?",
+        q: "How do you wish someone “good night” after Yalda stories and tea?",
         choices: [
           { fa: "شب بخیر", finglish: "shab bekheir" },
           { fa: "صبح بخیر", finglish: "sobh bekheir" },
@@ -281,21 +280,21 @@ const LEVELS = [
         answer: 0,
       },
       {
-        q: "How do you say “please” in Persian?",
+        q: "Offering tea and snacks to guests, you often say …",
         choices: [
-          { fa: "لطفاً", finglish: "lotfan" },
-          { fa: "متشکرم", finglish: "moteshakkeram" },
-          { fa: "ببخشید", finglish: "bebakhshid" },
-          { fa: "سلام", finglish: "salam" },
+          { fa: "بفرمایید", finglish: "befarmayid" },
+          { fa: "برو بیرون", finglish: "boro birun" },
+          { fa: "خداحافظ", finglish: "khodahafez" },
+          { fa: "امتحان", finglish: "emtehan" },
         ],
         answer: 0,
       },
       {
-        q: "How do you say “thank you” in Persian?",
+        q: "How do you say “thank you” when someone serves you on Yalda?",
         choices: [
           { fa: "متشکرم", finglish: "moteshakkeram" },
-          { fa: "خواهش می‌کنم", finglish: "khahesh mikonam" },
-          { fa: "بفرمایید", finglish: "befarmayid" },
+          { fa: "ببخشید", finglish: "bebakhshid" },
+          { fa: "سلام", finglish: "salam" },
           { fa: "خداحافظ", finglish: "khodahafez" },
         ],
         answer: 0,
@@ -305,21 +304,21 @@ const LEVELS = [
   {
     id: "level-6",
     label: "Level 6 · Hard",
-    band: "Hard · Expressions",
+    band: "Hard · Yalda culture",
     itemId: "candle",
     questions: [
       {
-        q: "How do you say “candle” in Persian?",
+        q: "Which sofreh item brings light against the darkness of the longest night?",
         choices: [
           { fa: "شمع", finglish: "sham'" },
-          { fa: "چراغ", finglish: "cheragh" },
-          { fa: "آتش", finglish: "atash" },
+          { fa: "یخ", finglish: "yakh" },
+          { fa: "سایه", finglish: "sayeh" },
           { fa: "دود", finglish: "dud" },
         ],
         answer: 0,
       },
       {
-        q: "Which phrase means “victory of light over darkness”?",
+        q: "Yalda celebrates the victory of light over darkness — how is that said?",
         choices: [
           { fa: "پیروزی نور بر تاریکی", finglish: "piruzi-ye nur bar tariki" },
           { fa: "پایان بهار", finglish: "payan-e bahar" },
@@ -329,7 +328,7 @@ const LEVELS = [
         answer: 0,
       },
       {
-        q: "Which phrase means “winter solstice” in cultural talk?",
+        q: "Which phrase means “winter solstice” in cultural talk about Yalda?",
         choices: [
           { fa: "انقلاب زمستانی", finglish: "enqelab-e zemestani" },
           { fa: "اعتدال بهاری", finglish: "e'tedal-e bahari" },
@@ -339,80 +338,22 @@ const LEVELS = [
         answer: 0,
       },
       {
-        q: "How do you say “light” in Persian?",
+        q: "Candles on the Yalda table are a symbol of …",
         choices: [
           { fa: "نور", finglish: "nur" },
           { fa: "تاریکی", finglish: "tariki" },
-          { fa: "سایه", finglish: "sayeh" },
+          { fa: "سرما", finglish: "sarma" },
           { fa: "مه", finglish: "meh" },
         ],
         answer: 0,
       },
       {
-        q: "How do you say “hope” in Persian?",
+        q: "Staying awake with stories and light on Yalda is a sign of …",
         choices: [
           { fa: "امید", finglish: "omid" },
           { fa: "ترس", finglish: "tars" },
-          { fa: "خستگی", finglish: "khastegi" },
           { fa: "عجله", finglish: "ajaleh" },
-        ],
-        answer: 0,
-      },
-    ],
-  },
-  {
-    id: "level-7",
-    label: "Level 7 · Hard",
-    band: "Hard · Expressions",
-    itemId: "mirror",
-    questions: [
-      {
-        q: "How do you say “mirror” in Persian?",
-        choices: [
-          { fa: "آینه", finglish: "ayeneh" },
-          { fa: "شانه", finglish: "shaneh" },
-          { fa: "لیوان", finglish: "livan" },
-          { fa: "قاشق", finglish: "qashoq" },
-        ],
-        answer: 0,
-      },
-      {
-        q: "How do Persians often refer to fortune-telling with Hafez on Yalda?",
-        choices: [
-          { fa: "فال حافظ", finglish: "fal-e hafez" },
-          { fa: "بازی فوتبال", finglish: "bazi-ye futbal" },
-          { fa: "آشپزی سریع", finglish: "ashpazi-ye sari'" },
-          { fa: "خرید آنلاین", finglish: "kharid-e online" },
-        ],
-        answer: 0,
-      },
-      {
-        q: "How do you say “blessing / abundance” often linked with pomegranate?",
-        choices: [
-          { fa: "برکت", finglish: "barakat" },
-          { fa: "سرعت", finglish: "sor'at" },
           { fa: "خستگی", finglish: "khastegi" },
-          { fa: "سکوت", finglish: "sokut" },
-        ],
-        answer: 0,
-      },
-      {
-        q: "Which phrase means “reading poetry together”?",
-        choices: [
-          { fa: "شعرخوانی", finglish: "she'r-khani" },
-          { fa: "دویدن", finglish: "davidan" },
-          { fa: "شنا کردن", finglish: "shena kardan" },
-          { fa: "خوابیدن", finglish: "khabidan" },
-        ],
-        answer: 0,
-      },
-      {
-        q: "Which phrase means “storytelling”?",
-        choices: [
-          { fa: "قصه‌گویی", finglish: "qesseh-guyi" },
-          { fa: "نامه نوشتن", finglish: "nameh neveshtan" },
-          { fa: "در زدن", finglish: "dar zadan" },
-          { fa: "آش پختن", finglish: "ash pokhtan" },
         ],
         answer: 0,
       },
