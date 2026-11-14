@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Decorate Yalda Night — Learn Persian</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;700&family=Vazirmatn:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="night" aria-hidden="true">
+      <div class="stars"></div>
+      <div class="glow"></div>
+    </div>
+
+    <main class="app">
+      <section id="screen-start" class="screen screen--start is-active">
+        <p class="brand-en">Learn Persian</p>
+        <h1 class="brand-title">Decorate Yalda Night</h1>
+        <p class="lede">
+          Learn Persian for Yalda night. Each level has 5 English questions with
+          Persian + Finglish answers. Then place that level’s sofreh item
+          (required). 7 levels unlock 7 items — finish them all to celebrate.
+        </p>
+        <ol class="path" id="level-path"></ol>
+        <button type="button" class="start-btn" id="btn-start">Start learning</button>
+      </section>
+
+      <section id="screen-play" class="screen screen--play" hidden>
+        <header class="play-top">
+          <p class="play-brand">Decorate Yalda Night</p>
+          <p class="play-meta">
+            <span id="level-label"></span>
+            ·
+            <span id="progress-label"></span>
+          </p>
+        </header>
+
+        <div class="play-layout">
+          <aside class="sofreh-panel" aria-label="Yalda sofreh">
+            <div class="sofreh" id="sofreh-play">
+              <div class="sofreh-cloth"></div>
+              <ul class="sofreh-items" id="sofreh-play-items"></ul>
+            </div>
+            <p class="sofreh-caption" id="sofreh-play-caption">
+              Finish a level to unlock its sofreh item.
+            </p>
+          </aside>
+
+          <div class="quiz-panel">
+            <p class="quiz-count" id="quiz-count"></p>
+            <h2 class="quiz-question" id="quiz-question"></h2>
+            <div class="quiz-options" id="quiz-options" role="list"></div>
+            <p class="quiz-feedback" id="quiz-feedback" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-decorate" class="screen screen--decorate" hidden>
+        <header class="play-top">
+          <p class="play-brand">Decorate the sofreh</p>
+          <p class="play-meta" id="decorate-meta"></p>
+        </header>
+
+        <p class="decorate-lede" id="decorate-lede">
+          Drag this level’s item onto the table to continue.
+        </p>
+
+        <div class="decorate-layout">
+          <div
+            class="sofreh sofreh--drop"
+            id="sofreh-drop"
+            aria-label="Drop zone for sofreh items"
+          >
+            <div class="sofreh-cloth"></div>
+            <ul class="sofreh-items" id="sofreh-drop-items"></ul>
+            <p class="drop-hint" id="drop-hint">Drop here</p>
+          </div>
+
+          <div class="tray-panel">
+            <p class="tray-label">Place this item</p>
+            <ul class="tray" id="item-tray"></ul>
+            <div class="decorate-actions">
+              <button type="button" class="start-btn" id="btn-continue" disabled>
+                Next level
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-win" class="screen screen--win" hidden>
+        <div class="sticker-layer" id="sticker-layer" aria-hidden="true"></div>
+        <p class="brand-en">Celebration</p>
+        <h1 class="brand-title">Sofreh complete!</h1>
+        <p class="lede win-line" id="win-line"></p>
+        <div class="sticker-row" id="sticker-row" aria-label="Celebration stickers"></div>
+        <div class="sofreh sofreh--finale" id="sofreh-finale" aria-hidden="true">
+          <div class="sofreh-cloth"></div>
+          <ul class="sofreh-items" id="sofreh-finale-items"></ul>
+        </div>
+        <button type="button" class="again-btn" id="btn-again">Play again</button>
+      </section>
+    </main>
+
+    <script src="questions.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>

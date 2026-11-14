@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Decorate Haft-Seen — Learn Persian for Nowruz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@500;700&family=Vazirmatn:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="spring" aria-hidden="true">
+      <div class="bloom"></div>
+      <div class="sun-glow"></div>
+    </div>
+
+    <main class="app">
+      <section id="screen-start" class="screen screen--start is-active">
+        <p class="brand-en">Learn Persian</p>
+        <h1 class="brand-title">
+          Decorate Haft-Seen
+          <span class="brand-fa" lang="fa" dir="rtl">هفت‌سین</span>
+        </h1>
+        <p class="lede">
+          Read English clues about each Nowruz item — color and whether it is
+          eatable. Guess and type the Persian name, then place it on the matching
+          symbol slot on the sofreh. Complete all 10 items to celebrate.
+        </p>
+        <ol class="path" id="level-path"></ol>
+        <button type="button" class="start-btn" id="btn-start">Start learning</button>
+      </section>
+
+      <section id="screen-play" class="screen screen--play" hidden>
+        <header class="play-top">
+          <p class="play-brand">Decorate Haft-Seen</p>
+          <p class="play-meta">
+            <span id="level-label"></span>
+            ·
+            <span id="progress-label"></span>
+          </p>
+        </header>
+
+        <div class="play-layout">
+          <aside class="sofreh-panel" aria-label="Haft-Seen sofreh">
+            <div class="sofreh" id="sofreh-play">
+              <div class="sofreh-cloth"></div>
+              <ul class="sofreh-slots" id="sofreh-play-slots"></ul>
+            </div>
+            <p class="sofreh-caption" id="sofreh-play-caption">
+              Solve a clue to unlock its sofreh item.
+            </p>
+          </aside>
+
+          <div class="clue-panel">
+            <p class="clue-count" id="clue-count"></p>
+            <div class="picture-frame" id="picture-frame" aria-label="Item picture">
+              <span class="picture-emoji" id="picture-emoji"></span>
+            </div>
+            <h2 class="clue-heading">What is this Haft-Seen item?</h2>
+            <ul class="clue-list" id="clue-list"></ul>
+            <label class="answer-label" for="answer-input">
+              Write the name in Persian
+            </label>
+            <div class="answer-row">
+              <input
+                type="text"
+                id="answer-input"
+                class="answer-input"
+                lang="fa"
+                dir="rtl"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="مثلاً سکه"
+              />
+              <button type="button" class="check-btn" id="btn-check">Check</button>
+            </div>
+            <p class="clue-feedback" id="clue-feedback" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-decorate" class="screen screen--decorate" hidden>
+        <header class="play-top">
+          <p class="play-brand">Decorate the sofreh</p>
+          <p class="play-meta" id="decorate-meta"></p>
+        </header>
+
+        <p class="decorate-lede" id="decorate-lede">
+          Drag this item onto its matching sofreh slot to continue.
+        </p>
+
+        <div class="decorate-layout">
+          <div
+            class="sofreh sofreh--drop"
+            id="sofreh-drop"
+            aria-label="Haft-Seen sofreh with drop slots"
+          >
+            <div class="sofreh-cloth"></div>
+            <ul class="sofreh-slots" id="sofreh-drop-slots"></ul>
+            <p class="drop-hint" id="drop-hint">Drop on the matching symbol slot</p>
+          </div>
+
+          <div class="tray-panel">
+            <p class="tray-label">Place this item</p>
+            <ul class="tray" id="item-tray"></ul>
+            <div class="decorate-actions">
+              <button type="button" class="start-btn" id="btn-continue" disabled>
+                Next item
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="screen-win" class="screen screen--win" hidden>
+        <div class="sticker-layer" id="sticker-layer" aria-hidden="true"></div>
+        <p class="brand-en">Celebration</p>
+        <h1 class="brand-title">Sofreh complete!</h1>
+        <p class="lede win-line" id="win-line"></p>
+        <div class="sticker-row" id="sticker-row" aria-label="Celebration stickers"></div>
+        <div class="sofreh sofreh--finale" id="sofreh-finale" aria-hidden="true">
+          <div class="sofreh-cloth"></div>
+          <ul class="sofreh-slots" id="sofreh-finale-slots"></ul>
+        </div>
+        <button type="button" class="again-btn" id="btn-again">Play again</button>
+      </section>
+    </main>
+
+    <script src="questions.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>
